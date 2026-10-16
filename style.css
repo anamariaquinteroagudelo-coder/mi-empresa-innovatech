@@ -1,16 +1,137 @@
-// Función para alternar entre las secciones de la página web
-function mostrarSeccion(idSeccion) {
-    // Selecciona todas las secciones
-    const secciones = document.querySelectorAll('.seccion');
-    
-    // Oculta todas las secciones
-    secciones.forEach(seccion => {
-        seccion.classList.add('oculta');
-    });
-    
-    // Muestra únicamente la sección cuyo ID coincide con el botón presionado
-    const seccionActiva = document.getElementById(idSeccion);
-    if (seccionActiva) {
-        seccionActiva.classList.remove('oculta');
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #0b2545;
+    color: white;
+    padding: 2rem;
+}
+
+nav {
+    margin: 1.5rem 0;
+}
+
+nav button {
+    background-color: #134074;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav button:hover {
+    background-color: #8da9c4;
+    color: #0b2545;
+}
+
+.seccion {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.oculta {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px auto;
+}
+
+.menu button {
+    background-color: #d85c91;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    background-color: #b93f76;
+    transform: translateY(-2px);
+}
+
+.seccion {
+    display: none;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff0f6;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px #e8bfd0;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+.seccion h2 {
+    color: #b93f76;
+    margin-bottom: 15px;
+}
+
+.seccion p,
+.seccion li {
+    color: #624653;
+    line-height: 1.8;
+}
+
+.seccion li {
+    margin-left: 20px;
+}
+
+.seccion input,
+.seccion textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0 18px;
+    padding: 12px;
+    border: 1px solid #e7b6cb;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+.seccion textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.seccion button {
+    background: #d85c91;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
 }

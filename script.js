@@ -1,59 +1,46 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
+// Función para alternar entre las secciones de la página web
+function mostrarSeccion(idSeccion) {
+    // Selecciona todas las secciones
+    const secciones = document.querySelectorAll('.seccion');
+    
+    // Oculta todas las secciones
+    secciones.forEach(seccion => {
+        seccion.classList.add('oculta');
+    });
+    
+    // Muestra únicamente la sección cuyo ID coincide con el botón presionado
+    const seccionActiva = document.getElementById(idSeccion);
+    if (seccionActiva) {
+        seccionActiva.classList.remove('oculta');
+    }
+}
+function mostrarSeccion(nombre) {
+    const secciones = document.querySelectorAll(".seccion");
+
+    secciones.forEach(function(seccion) {
+        seccion.classList.remove("activa");
+    });
+
+    const seleccionada = document.getElementById(nombre);
+
+    if (seleccionada) {
+        seleccionada.classList.add("activa");
+    }
 }
 
-header {
-    background-color: #0b2545;
-    color: white;
-    padding: 2rem;
-}
+function enviarMensaje() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+    const respuesta = document.getElementById("respuesta");
 
-nav {
-    margin: 1.5rem 0;
-}
+    if (nombre === "" || mensaje === "") {
+        respuesta.textContent = "Por favor, completa tu nombre y tu mensaje.";
+        return;
+    }
 
-nav button {
-    background-color: #134074;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
+    respuesta.textContent =
+        "¡Gracias, " + nombre + "! Tu mensaje se ha preparado correctamente.";
 
-nav button:hover {
-    background-color: #8da9c4;
-    color: #0b2545;
-}
-
-.seccion {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.oculta {
-    display: none;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 8px 0;
-    font-size: 1.1rem;
+    document.getElementById("nombre").value = "";
+    document.getElementById("mensaje").value = "";
 }
