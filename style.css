@@ -13,13 +13,4 @@ function mostrarSeccion(idSeccion) {
     if (seccionActiva) {
         seccionActiva.classList.remove('oculta');
     }
-} // Función para interactuar con las tarjetas de servicios
-function solicitarServicio(nombreServicio) {
-    const contenedorMensaje = document.getElementById('mensaje-servicio');
-    
-    // Cambia el texto para avisarle al usuario
-    contenedorMensaje.innerHTML = `<strong>¡Excelente elección!</strong> Has seleccionado el servicio de <em>${nombreServicio}</em>. Nos pondremos en contacto contigo pronto.`;
-    
-    // Hace visible el recuadro
-    contenedorMensaje.classList.remove('oculta');
 }
