@@ -1,59 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
-}
-
-header {
-    background-color: #0b2545;
-    color: white;
-    padding: 2rem;
-}
-
-nav {
-    margin: 1.5rem 0;
-}
-
-nav button {
-    background-color: #134074;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-nav button:hover {
-    background-color: #8da9c4;
-    color: #0b2545;
-}
-
-.seccion {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.oculta {
-    display: none;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 8px 0;
-    font-size: 1.1rem;
+// Función para alternar entre las secciones de la página web
+function mostrarSeccion(idSeccion) {
+    // Selecciona todas las secciones
+    const secciones = document.querySelectorAll('.seccion');
+    
+    // Oculta todas las secciones
+    secciones.forEach(seccion => {
+        seccion.classList.add('oculta');
+    });
+    
+    // Muestra únicamente la sección cuyo ID coincide con el botón presionado
+    const seccionActiva = document.getElementById(idSeccion);
+    if (seccionActiva) {
+        seccionActiva.classList.remove('oculta');
+    }
+} // Función para interactuar con las tarjetas de servicios
+function solicitarServicio(nombreServicio) {
+    const contenedorMensaje = document.getElementById('mensaje-servicio');
+    
+    // Cambia el texto para avisarle al usuario
+    contenedorMensaje.innerHTML = `<strong>¡Excelente elección!</strong> Has seleccionado el servicio de <em>${nombreServicio}</em>. Nos pondremos en contacto contigo pronto.`;
+    
+    // Hace visible el recuadro
+    contenedorMensaje.classList.remove('oculta');
 }
