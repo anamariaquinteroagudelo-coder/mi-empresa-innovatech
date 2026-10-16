@@ -35,7 +35,7 @@ nav button:hover {
 }
 
 .seccion {
-    background:white;
+    background: white;
     margin: 20px auto;
     padding: 20px;
     width: 80%;
